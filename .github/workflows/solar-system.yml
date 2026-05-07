@@ -49,6 +49,8 @@ jobs:
 
         - name: Run Coverage
           run: npm run coverage
+          env:
+            MONGO_URI: mongodb://localhost:27017/solar-system
     docker:
       name: Docker build and push
       runs-on: ubuntu-latest
