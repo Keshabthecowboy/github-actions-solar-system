@@ -52,6 +52,8 @@ jobs:
           env:
             MONGO_URI: mongodb://localhost:27017/solar-system
     docker:
+      permissions:
+        packages: write
       name: Docker build and push
       runs-on: ubuntu-latest
 
