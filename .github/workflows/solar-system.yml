@@ -9,6 +9,11 @@ on:
     
 jobs:
     unit-testing:
+        name: Cache NPM Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: '${{ runner.os }}-node-modules-${{ hashFiles(''package-lock.json''') }}'
         name: Unit Testing
         runs-on: ubuntu-latest
         steps:
